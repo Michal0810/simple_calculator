@@ -2,16 +2,16 @@ version: 2.1
 
 jobs:
   test:
-    docker:
-      - image: circleci/python:3.8  # Wybierz odpowiednią wersję Pythona dla swojego projektu
+    docker:                        # Użycie środowiska Docker jako executor
+      - image: circleci/python:3.8  # Ustal odpowiedni obraz Docker
     steps:
-      - checkout                    # Pobiera kod z repozytorium
+      - checkout                    # Pobranie kodu z repozytorium
       - run:
           name: Install dependencies
           command: python -m pip install --upgrade pip
       - run:
           name: Run tests
-          command: python -m unittest discover -s tests  # Uruchamia testy jednostkowe
+          command: python -m unittest discover -s tests  # Uruchomienie testów jednostkowych
 
 workflows:
   version: 2
