@@ -9,7 +9,6 @@ jobs:
       - run:
           name: Debug current directory
           command: pwd && ls -R
-
       - run:
           name: Create test results directory
           command: mkdir -p test_results
